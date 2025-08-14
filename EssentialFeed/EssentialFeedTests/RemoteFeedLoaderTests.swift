@@ -9,28 +9,39 @@ import XCTest
 
 class RemoteFeedLoader {
     func load() {
-        HTTPClient.shared.requestedURL = URL(string: "https://a-url.com")
+        HTTPClient.shared.get(from: URL(string: "https://a-url.com")!) // Move test logic from RemoteFeedLoader to HTTPClient
     }
 }
 
 class HTTPClient {
-    static let shared = HTTPClient()  // Singleton single point of access instead of dependency injection via constructor, property or method
-    private init() {} // No one can create this type
+    static var shared = HTTPClient()  // Remove Singleton instance
+    // Remove private init since it's no longer a Singleton
 
+    func get(from url: URL) {} // Override this method in the mock / spy
+}
+
+class HTTPClientSpy: HTTPClient {
+    // Move test logic to this new subclass of the HTTPClient
     var requestedURL: URL?
+    override func get(from url: URL) {
+        requestedURL = url
+    }
+    
 }
 
 class RemoteFeedLoaderTests: XCTestCase {
     
     func test_init_doesNotRequestDataFromURL() {
-        let client = HTTPClient.shared
+        let client = HTTPClientSpy()
+        HTTPClient.shared = client
         _ = RemoteFeedLoader()
         
         XCTAssertNil(client.requestedURL)
     }
     
     func test_load_requestDataFromURL() {
-        let client = HTTPClient.shared
+        let client = HTTPClientSpy()
+        HTTPClient.shared = client
         let sut = RemoteFeedLoader()
         
         sut.load()

@@ -2,7 +2,6 @@
 
 [![CI](https://github.com/rubyvictor/EssentialFeed-Starter-Project/actions/workflows/CI.yml/badge.svg)](https://github.com/rubyvictor/EssentialFeed-Starter-Project/actions/workflows/CI.yml)
 
-![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/CI-iOS/badge.svg) ![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/CI-macOS/badge.svg) ![](https://github.com/essentialdevelopercom/essential-feed-case-study/workflows/Deploy/badge.svg)
 
 ## Image Feed Feature Specs
 

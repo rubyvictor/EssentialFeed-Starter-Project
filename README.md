@@ -363,3 +363,15 @@ GET /image/{image-id}/comments
 - Error (if applicable, e.g., no delete permission)
 
 #### Side-effects must run serially to avoid race-conditions
+
+## Anatomy of Dependency Inversion
+
+![](anatomy_dependency_inversion.png)
+
+## High-level component LocalFeedLoader references the <FeedStore> boundary, which is a protocol (an abstraction with no implementation nor knowledge of low-level implementation details). Such a relationship will make the LocalFeedLoader (high-level core logic) agnostic of the concrete implementations of the boundary abstraction. To complete the inversion, the low-level component, the FeedStore implementation, will have to implement/conform to the requirements of the <FeedStore> boundary.
+
+![] (high_level_component.png)
+
+## Observe the same pattern all over the EssentialFeed project through the architecture diagram
+
+![](dependency_inversion_architecture_diagram.png)

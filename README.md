@@ -344,7 +344,7 @@ GET /image/{image-id}/comments
 
 ![](architecture.png)
 
-## Defining Inbox Checklists and Contract Specs to Improve Collaboration and Avoid Side-effects Bugs in Multi-threaded Environments
+## FeedStore Implementation Inbox
 
 ### Retrieve:
 - Empty cache

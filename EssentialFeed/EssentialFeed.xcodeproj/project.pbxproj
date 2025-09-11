@@ -25,6 +25,7 @@
 		B1DAEDA72E702B37009782CB /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDA62E702B37009782CB /* FeedCacheTestHelpers.swift */; };
 		B1DAEDA92E702E8F009782CB /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDA82E702E8F009782CB /* SharedTestHelpers.swift */; };
 		B1DAEDAA2E702E8F009782CB /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDA82E702E8F009782CB /* SharedTestHelpers.swift */; };
+		B1DAEDAC2E729F1B009782CB /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDAB2E729F12009782CB /* FeedCachePolicy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		B1DAEDA42E701FB7009782CB /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		B1DAEDA62E702B37009782CB /* FeedCacheTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelpers.swift; sourceTree = "<group>"; };
 		B1DAEDA82E702E8F009782CB /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
+		B1DAEDAB2E729F12009782CB /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -206,6 +208,7 @@
 		B1C700C92E66DA7E00F2023E /* Feed Cache */ = {
 			isa = PBXGroup;
 			children = (
+				B1DAEDAB2E729F12009782CB /* FeedCachePolicy.swift */,
 				B1C700D02E68932800F2023E /* LocalFeedImage.swift */,
 				B1C700CA2E66DAC500F2023E /* LocalFeedLoader.swift */,
 				B1C700CC2E66DC4900F2023E /* FeedStore.swift */,
@@ -361,6 +364,7 @@
 				B1C700D12E68932800F2023E /* LocalFeedImage.swift in Sources */,
 				B1C700CD2E66DC4900F2023E /* FeedStore.swift in Sources */,
 				B1C700CB2E66DAC500F2023E /* LocalFeedLoader.swift in Sources */,
+				B1DAEDAC2E729F1B009782CB /* FeedCachePolicy.swift in Sources */,
 				080EDF0E21B6DCB600813479 /* FeedLoader.swift in Sources */,
 				080EDF0C21B6DAE800813479 /* FeedImage.swift in Sources */,
 			);

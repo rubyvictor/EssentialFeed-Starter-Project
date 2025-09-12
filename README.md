@@ -347,10 +347,12 @@ GET /image/{image-id}/comments
 ## FeedStore Implementation Inbox
 
 ### Retrieve:
-- Empty cache
+- Empty cache returns empty
+- Empty cache twice returns empty (no side-effects)
 - Non-empty cache returns data
 - Non-empty cache twice returns same data (no side-effects)
-- Error (if applicable, e.g., invalid data)
+- Error returns error (if applicable, e.g., invalid data)
+- Error twice returns same error (if applicable, e.g., invalid data)
 
 ### Insert:
 - To empty cache stores data

@@ -26,6 +26,7 @@
 		B1DAEDA92E702E8F009782CB /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDA82E702E8F009782CB /* SharedTestHelpers.swift */; };
 		B1DAEDAA2E702E8F009782CB /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDA82E702E8F009782CB /* SharedTestHelpers.swift */; };
 		B1DAEDAC2E729F1B009782CB /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDAB2E729F12009782CB /* FeedCachePolicy.swift */; };
+		B1DAEDAE2E740410009782CB /* CodableFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDAD2E740410009782CB /* CodableFeedStoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		B1DAEDA62E702B37009782CB /* FeedCacheTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelpers.swift; sourceTree = "<group>"; };
 		B1DAEDA82E702E8F009782CB /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		B1DAEDAB2E729F12009782CB /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
+		B1DAEDAD2E740410009782CB /* CodableFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -201,6 +203,7 @@
 				B1C700C72E656A6B00F2023E /* CacheFeedUseCaseTests.swift */,
 				B19DAA712E69DAEB005282AF /* LoadFeedFromCacheUseCaseTests.swift */,
 				B1DAEDA42E701FB7009782CB /* ValidateFeedCacheUseCaseTests.swift */,
+				B1DAEDAD2E740410009782CB /* CodableFeedStoreTests.swift */,
 			);
 			path = "Feed Cache";
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1DAEDAE2E740410009782CB /* CodableFeedStoreTests.swift in Sources */,
 				B1DAEDA72E702B37009782CB /* FeedCacheTestHelpers.swift in Sources */,
 				B1DAEDA52E701FB7009782CB /* ValidateFeedCacheUseCaseTests.swift in Sources */,
 				B1C700912E5A013D00F2023E /* XCTestCase-MemoryLeakTracking.swift in Sources */,

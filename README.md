@@ -370,20 +370,20 @@ GET /image/{image-id}/comments
 
 ![](anatomy_dependency_inversion.png)
 
-## High-level component LocalFeedLoader references the <FeedStore> boundary, which is a protocol (an abstraction with no implementation nor knowledge of low-level implementation details). Such a relationship will make the LocalFeedLoader (high-level core logic) agnostic of the concrete implementations of the boundary abstraction. To complete the inversion, the low-level component, the FeedStore implementation, will have to implement/conform to the requirements of the <FeedStore> boundary.
+#### High-level component LocalFeedLoader references the <FeedStore> boundary, which is a protocol (an abstraction with no implementation nor knowledge of low-level implementation details). Such a relationship will make the LocalFeedLoader (high-level core logic) agnostic of the concrete implementations of the boundary abstraction. To complete the inversion, the low-level component, the FeedStore implementation, will have to implement/conform to the requirements of the <FeedStore> boundary.
 
 ![](high_level_component.png)
 
-## Observe the same pattern all over the EssentialFeed project through the architecture diagram
+### Observe the same pattern all over the EssentialFeed project through the architecture diagram
 
 ![](dependency_inversion_architecture_diagram.png)
 
 ## Make Dependencies Explicit
 
-### When following the Given/When/Then test structure, as a rule of thumb, every value used in the When and Then portions should be defined in the Given portion.
+#### When following the Given/When/Then test structure, as a rule of thumb, every value used in the When and Then portions should be defined in the Given portion.
 
 ![](GivenWhenThen.png)
 
-### To make the test setup easier to follow/understand, we make all important details explicit by extracting the URL value produced by the testSpecificStoreURL() to a local constant and explicitly inject it as a dependency to the system under test creation (Given part), and then proceed to use it in the When part.
+#### To make the test setup easier to follow/understand, we make all important details explicit by extracting the URL value produced by the testSpecificStoreURL() to a local constant and explicitly inject it as a dependency to the system under test creation (Given part), and then proceed to use it in the When part.
 
 ![](MakeDetailsExplicit.png)

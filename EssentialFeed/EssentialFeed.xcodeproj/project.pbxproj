@@ -27,6 +27,7 @@
 		B1DAEDAA2E702E8F009782CB /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDA82E702E8F009782CB /* SharedTestHelpers.swift */; };
 		B1DAEDAC2E729F1B009782CB /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDAB2E729F12009782CB /* FeedCachePolicy.swift */; };
 		B1DAEDAE2E740410009782CB /* CodableFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDAD2E740410009782CB /* CodableFeedStoreTests.swift */; };
+		B1DAEDB02E78535F009782CB /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDAF2E785354009782CB /* CodableFeedStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		B1DAEDA82E702E8F009782CB /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		B1DAEDAB2E729F12009782CB /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
 		B1DAEDAD2E740410009782CB /* CodableFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStoreTests.swift; sourceTree = "<group>"; };
+		B1DAEDAF2E785354009782CB /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -211,6 +213,7 @@
 		B1C700C92E66DA7E00F2023E /* Feed Cache */ = {
 			isa = PBXGroup;
 			children = (
+				B1DAEDAF2E785354009782CB /* CodableFeedStore.swift */,
 				B1DAEDAB2E729F12009782CB /* FeedCachePolicy.swift */,
 				B1C700D02E68932800F2023E /* LocalFeedImage.swift */,
 				B1C700CA2E66DAC500F2023E /* LocalFeedLoader.swift */,
@@ -369,6 +372,7 @@
 				B1C700CB2E66DAC500F2023E /* LocalFeedLoader.swift in Sources */,
 				B1DAEDAC2E729F1B009782CB /* FeedCachePolicy.swift in Sources */,
 				080EDF0E21B6DCB600813479 /* FeedLoader.swift in Sources */,
+				B1DAEDB02E78535F009782CB /* CodableFeedStore.swift in Sources */,
 				080EDF0C21B6DAE800813479 /* FeedImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

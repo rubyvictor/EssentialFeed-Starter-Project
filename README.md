@@ -377,3 +377,13 @@ GET /image/{image-id}/comments
 ## Observe the same pattern all over the EssentialFeed project through the architecture diagram
 
 ![](dependency_inversion_architecture_diagram.png)
+
+## Make Dependencies Explicit
+
+### When following the Given/When/Then test structure, as a rule of thumb, every value used in the When and Then portions should be defined in the Given portion.
+
+![](GivenWhenThen.png)
+
+### To make the test setup easier to follow/understand, we make all important details explicit by extracting the URL value produced by the testSpecificStoreURL() to a local constant and explicitly inject it as a dependency to the system under test creation (Given part), and then proceed to use it in the When part.
+
+![](MakeDetailsExplicit.png)

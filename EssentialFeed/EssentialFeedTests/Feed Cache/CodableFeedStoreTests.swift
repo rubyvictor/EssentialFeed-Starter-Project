@@ -220,7 +220,7 @@ class CodableFeedStoreTests: XCTestCase {
     }
     
     private func testSpecificStoreURL() -> URL {
-        return cachesDirectory().appendingPathExtension("\(type(of: self)).store")
+        return cachesDirectory().appendingPathComponent("\(type(of: self)).store")
     }
     
     private func cachesDirectory() -> URL {

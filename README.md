@@ -387,3 +387,29 @@ GET /image/{image-id}/comments
 #### To make the test setup easier to follow/understand, we make all important details explicit by extracting the URL value produced by the testSpecificStoreURL() to a local constant and explicitly inject it as a dependency to the system under test creation (Given part), and then proceed to use it in the When part.
 
 ![](MakeDetailsExplicit.png)
+
+## Serial vs Concurrent queues
+
+#### Serial queues perform operations in sequence:
+![](Serial_queue.png)
+
+#### Concurrent queues can perform operations in parallel:
+![](concurrent_queue.png)
+
+#### When needed, we can block a concurrent queue with a barrier operation:
+![](barrier_operation.png)
+
+## Thread-safe(r) Value Types
+
+#### Reference types in Swift (e.g., class) share a single copy of the instance data.
+
+#### When sharing mutable data (references), threading becomes a real challenge. For example, if two threads try to mutate the same instance data at the same time, all types of race conditions can occur (data corruption, crashes…).
+
+#### Value Types in Swift (struct, enum or tuples) are initialized, assigned and passed as arguments as independent instances with their own unique copy of the instance data.
+
+#### Since Pure Value Types* (types formed of only value types) are passed around as unique copies, they don’t share mutable state.
+
+#### In turn, Pure Value Types are thread safe since multiple threads will hold and operate on their own unique copy of the data!
+
+#### Example flow of passing Value Types between threads:
+![](value_types_thread_safe.png)

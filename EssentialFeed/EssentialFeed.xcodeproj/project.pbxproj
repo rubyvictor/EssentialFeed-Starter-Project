@@ -30,6 +30,7 @@
 		B1DAEDB02E78535F009782CB /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDAF2E785354009782CB /* CodableFeedStore.swift */; };
 		B1DAEDB22E7B0ABF009782CB /* FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDB12E7B0AB1009782CB /* FeedStoreSpecs.swift */; };
 		B1DAEDB42E7B0C1F009782CB /* XCTestCase+FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDB32E7B0C1F009782CB /* XCTestCase+FeedStoreSpecs.swift */; };
+		B1DAEDB62E7BF8D3009782CB /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDB52E7BF8D3009782CB /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		B1DAEDAF2E785354009782CB /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
 		B1DAEDB12E7B0AB1009782CB /* FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpecs.swift; sourceTree = "<group>"; };
 		B1DAEDB32E7B0C1F009782CB /* XCTestCase+FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedStoreSpecs.swift"; sourceTree = "<group>"; };
+		B1DAEDB52E7BF8D3009782CB /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -212,6 +214,7 @@
 				B1DAEDAD2E740410009782CB /* CodableFeedStoreTests.swift */,
 				B1DAEDB12E7B0AB1009782CB /* FeedStoreSpecs.swift */,
 				B1DAEDB32E7B0C1F009782CB /* XCTestCase+FeedStoreSpecs.swift */,
+				B1DAEDB52E7BF8D3009782CB /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */,
 			);
 			path = "Feed Cache";
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				B19DAA752E69DD1B005282AF /* FeedStoreSpy.swift in Sources */,
 				B1DAEDA92E702E8F009782CB /* SharedTestHelpers.swift in Sources */,
 				B1C700C82E656A6B00F2023E /* CacheFeedUseCaseTests.swift in Sources */,
+				B1DAEDB62E7BF8D3009782CB /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */,
 				B19DAA722E69DAEB005282AF /* LoadFeedFromCacheUseCaseTests.swift in Sources */,
 				B1DAEDB22E7B0ABF009782CB /* FeedStoreSpecs.swift in Sources */,
 				B1C7008E2E57160A00F2023E /* URLSessionHTTPClientTests.swift in Sources */,

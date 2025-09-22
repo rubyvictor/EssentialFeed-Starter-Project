@@ -36,6 +36,7 @@
 		B1DAEDBD2E7D46C2009782CB /* CoreDataFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDBC2E7D46C2009782CB /* CoreDataFeedStoreTests.swift */; };
 		B1DAEDBF2E7D4F1F009782CB /* CoreDataFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDBE2E7D4F16009782CB /* CoreDataFeedStore.swift */; };
 		B1DAEDC22E7D5481009782CB /* FeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1DAEDC02E7D5481009782CB /* FeedStore.xcdatamodeld */; };
+		B1FD7C4A2E815775005CE7F4 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD7C492E815775005CE7F4 /* CoreDataHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		B1DAEDBC2E7D46C2009782CB /* CoreDataFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStoreTests.swift; sourceTree = "<group>"; };
 		B1DAEDBE2E7D4F16009782CB /* CoreDataFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStore.swift; sourceTree = "<group>"; };
 		B1DAEDC12E7D5481009782CB /* FeedStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore.xcdatamodel; sourceTree = "<group>"; };
+		B1FD7C492E815775005CE7F4 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -258,6 +260,7 @@
 				B1DAEDC02E7D5481009782CB /* FeedStore.xcdatamodeld */,
 				B1DAEDBE2E7D4F16009782CB /* CoreDataFeedStore.swift */,
 				B1DAEDAF2E785354009782CB /* CodableFeedStore.swift */,
+				B1FD7C492E815775005CE7F4 /* CoreDataHelpers.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1FD7C4A2E815775005CE7F4 /* CoreDataHelpers.swift in Sources */,
 				B1C700D12E68932800F2023E /* LocalFeedImage.swift in Sources */,
 				B1C700CD2E66DC4900F2023E /* FeedStore.swift in Sources */,
 				B1C700CB2E66DAC500F2023E /* LocalFeedLoader.swift in Sources */,

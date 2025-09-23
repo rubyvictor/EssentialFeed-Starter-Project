@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "869839B8-8D38-4694-98FE-3D52CEA5BCC8",
+      "name" : "Test Scheme Action",
+      "options" : {
+        "threadSanitizerEnabled" : true
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "identifier" : "B1FD7C542E827FEA005CE7F4",
+        "name" : "EssentialFeedCacheIntegrationTests"
+      }
+    }
+  ],
+  "version" : 1
+}

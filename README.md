@@ -413,3 +413,19 @@ GET /image/{image-id}/comments
 
 #### Example flow of passing Value Types between threads:
 ![](value_types_thread_safe.png)
+
+## The Ideal testing pyramid
+![](ideal_testing_pyramid.png)
+
+#### The testing pyramid instructs programmers to focus on unit/isolated tests as the foundation of their testing strategy. At a secondary level, we have integration tests which represent an essential, but a much smaller portion of tests. Finally, the third and smallest level represents end-to-end tests you run through the user interface (aka UI Tests).
+![](more_isolated_unit_tests.png)
+
+#### Without an initial persistence framework choice, we focused on defining the LocalFeedLoader persistence needs via an abstract interface (the protocol). So while test-driving the LocalFeedLoader we defined the <FeedStore> protocol methods (a contract) that any persistence mechanism implementation has to conform to.
+
+#### By introducing the <FeedStore> protocol boundary between these two components and using stubbing and spying techniques we could check that the LocalFeedLoader behaved correctly with a test-specific implementation of the <FeedStore>: the FeedStoreSpy class.
+
+#### We are confident the LocalFeedLoader works as intended even though we didn’t have a real persistence store implementation at the time we developed it!
+
+#### Basically, create a clean boundary between the business logic (high-level) and infrastructure details (low-level) to prevent tight coupling - this is a good design decision!
+
+![](develop_LocalFeedLoader_CoreDataFeedStore_in_isolation.png)

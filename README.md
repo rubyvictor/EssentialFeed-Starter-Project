@@ -429,3 +429,21 @@ GET /image/{image-id}/comments
 #### Basically, create a clean boundary between the business logic (high-level) and infrastructure details (low-level) to prevent tight coupling - this is a good design decision!
 
 ![](develop_LocalFeedLoader_CoreDataFeedStore_in_isolation.png)
+
+## Architecture Overview
+
+### Implementing reusable protocol specs:
+- Establish a boundary e.g., the `<FeedStore>` protocol between the business logic and the infrastructure implementation.
+- Isolates and decouples core business logic from frameworks like Core Data
+
+![](codableFeedStore_CoreDataFeedStore_overview.png)
+
+### Distinct Model representations:
+- Separate business logic from frameworks
+- Clear separation and model representation of the image feed data per module:
+
+![](distinct_model_representations.png)
+
+- Core Data models have two-way relationships i.e., `ManagedCache` holds a one-to-many relationship with `ManagedFeedImage`
+	- The `cache` relationship is a Core Data implementation detail that should not leak into the `LocalFeedImage` or any other core models.
+	- Avoid leaking of implementation details by transforming `ManagedFeedImage` data back into a `LocalFeedImage`, an immutable struct.

@@ -89,7 +89,7 @@ class URLSessionHTTPClientTests: XCTestCase {
     // MARK: - Helpers
     
     private func anyData() -> Data {
-        return Data(_ : "any data".utf8)
+        return Data("any data".utf8)
     }
     
     private func anyHTTPURLResponse() -> HTTPURLResponse {

@@ -64,7 +64,7 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
         let saveExp = expectation(description: "Wait for save completion")
         sut.save(feed) { result in
             if case let Result.failure(error) = result {
-                XCTAssertNil(error, "Expected to save feed successfully", file: file, line: line)
+                XCTFail("Expected to save feed successfully, got error \(error)", file: file, line: line)
             }
             saveExp.fulfill()
         }

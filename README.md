@@ -447,3 +447,23 @@ GET /image/{image-id}/comments
 - Core Data models have two-way relationships i.e., `ManagedCache` holds a one-to-many relationship with `ManagedFeedImage`
 	- The `cache` relationship is a Core Data implementation detail that should not leak into the `LocalFeedImage` or any other core models.
 	- Avoid leaking of implementation details by transforming `ManagedFeedImage` data back into a `LocalFeedImage`, an immutable struct.
+
+	## Separating platform-specific and platform-agnostic components
+
+	1. The EssentialFeed, a platform-agnostic target (platform independent components belong here)
+	2. The EssentialFeediOS, an iOS-specific target (iOS dependent components belong here)
+
+	![](diagram_agnostic_specific_components.png)
+
+## UX goals for the Feed UI experience
+
+[ ] Load feed automatically when view is presented
+[ ] Allow customer to manually reload feed (pull to refresh)
+[ ] Show a loading indicator while loading feed
+[ ] Render all loaded feed items (location, image, description)
+[ ] Image loading experience
+		[ ] Load when image view is visible (on screen)
+		[ ] Cancel when image view is out of screen
+		[ ] Show a loading indicator while loading image (shimmer)
+		[ ] Option to retry on image download error
+		[ ] Preload when image view is near visible	

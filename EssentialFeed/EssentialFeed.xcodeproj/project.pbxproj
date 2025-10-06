@@ -107,6 +107,7 @@
 		B1DAEDC12E7D5481009782CB /* FeedStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore.xcdatamodel; sourceTree = "<group>"; };
 		B1F028432E93B0FB0090C5F6 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F0284D2E93B0FC0090C5F6 /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1F028682E93BF7C0090C5F6 /* CI_iOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI_iOS.xctestplan; sourceTree = "<group>"; };
 		B1FD7C492E815775005CE7F4 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		B1FD7C4B2E815CD4005CE7F4 /* ManagedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedCache.swift; sourceTree = "<group>"; };
 		B1FD7C4D2E815D32005CE7F4 /* ManagedFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedFeedImage.swift; sourceTree = "<group>"; };
@@ -189,6 +190,7 @@
 		080EDEE721B6DA7E00813479 = {
 			isa = PBXGroup;
 			children = (
+				B1F028682E93BF7C0090C5F6 /* CI_iOS.xctestplan */,
 				B1FD7C5F2E8281BD005CE7F4 /* EssentialFeedCacheIntegrationTests.xctestplan */,
 				B1C700C32E5DB8C000F2023E /* CI.xctestplan */,
 				080EDEF321B6DA7E00813479 /* EssentialFeed */,

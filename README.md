@@ -457,7 +457,7 @@ GET /image/{image-id}/comments
 
 ## UX goals for the Feed UI experience
 
-- [ ] Load feed automatically when view is presented
+- [X] Load feed automatically when view is presented
 - [ ] Allow customer to manually reload feed (pull to refresh)
 - [ ] Show a loading indicator while loading feed
 - [ ] Render all loaded feed items (location, image, description)

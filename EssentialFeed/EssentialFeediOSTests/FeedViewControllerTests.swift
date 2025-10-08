@@ -146,6 +146,13 @@ private class fakeRefreshControl: UIRefreshControl {
 }
 
 private extension FeedViewController {
+    func simulateAppearance() {
+        if !isViewLoaded {
+            loadViewIfNeeded()
+            replaceRefreshControlWithFakeForiOS17Support()
+        }
+    }
+    
     func replaceRefreshControlWithFakeForiOS17Support() {
         let fake = fakeRefreshControl()
         refreshControl?.addTarget(self, action: #selector(load), for: .valueChanged)

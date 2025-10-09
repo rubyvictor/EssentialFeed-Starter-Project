@@ -11,6 +11,7 @@ import EssentialFeed
 final public class FeedViewController: UITableViewController {
     private var onViewIsAppearing: ((FeedViewController) -> (Void))?
     private var loader: FeedLoader?
+    private var tableModel = [FeedImage]()
     
     public convenience init(loader: FeedLoader) {
         self.init()
@@ -41,9 +42,24 @@ final public class FeedViewController: UITableViewController {
     
     @objc private func load() {
         refresh()
-        loader?.load { [weak self] _ in
+        loader?.load { [weak self] result in
+            self?.tableModel = (try? result.get()) ?? []
+            self?.tableView.reloadData()
             self?.refreshControl?.endRefreshing()
         }
+    }
+    
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableModel.count
+    }
+    
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellModel = tableModel[indexPath.row]
+        let cell = FeedImageCell()
+        cell.locationContainer.isHidden = (cellModel.location == nil)
+        cell.locationLabel.text = cellModel.location
+        cell.descriptionLabel.text = cellModel.description
+        return cell
     }
 }
 
@@ -64,6 +80,20 @@ public extension FeedViewController {
         
         beginAppearanceTransition(true, animated: false)
         endAppearanceTransition()
+    }
+    
+    func numberOfRenderedFeedImageViews() -> Int {
+        return tableView.numberOfRows(inSection: feedImagesSection)
+    }
+    
+    func feedImageView(at row: Int) -> UITableViewCell? {
+        let ds = tableView.dataSource
+        let index = IndexPath(row: row, section: feedImagesSection)
+        return ds?.tableView(tableView, cellForRowAt: index)
+    }
+    
+    private var feedImagesSection: Int {
+        return 0
     }
     
     private func replaceRefreshControlWithFakeForiOS17PlusSupport() {

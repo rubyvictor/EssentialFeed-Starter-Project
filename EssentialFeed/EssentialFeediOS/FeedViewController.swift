@@ -25,8 +25,8 @@ final public class FeedViewController: UITableViewController {
         load()
         
         onViewIsAppearing = { vc in
-            vc.refresh()
             vc.onViewIsAppearing = nil
+            vc.refresh()
         }
     }
     
@@ -59,19 +59,22 @@ public extension FeedViewController {
     func simulateAppearance() {
         if !isViewLoaded {
             loadViewIfNeeded()
-            replaceRefreshControlWithFakeForiOS17Support()
+            replaceRefreshControlWithFakeForiOS17PlusSupport()
         }
+        
+        beginAppearanceTransition(true, animated: false)
+        endAppearanceTransition()
     }
     
-    func replaceRefreshControlWithFakeForiOS17Support() {
-        let fake = fakeRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(load), for: .valueChanged)
+    private func replaceRefreshControlWithFakeForiOS17PlusSupport() {
+        let fakeRefreshControl = FakeUIRefreshControl()
+        
         refreshControl?.allTargets.forEach { target in
             refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
-                fake.addTarget(target, action: Selector(action), for: .valueChanged)
+                fakeRefreshControl.addTarget(target, action: Selector(action), for: .valueChanged)
             }
         }
-        refreshControl = fake
+        refreshControl = fakeRefreshControl
     }
 }
 
@@ -84,7 +87,7 @@ private extension UIRefreshControl {
     }
 }
 
-private class fakeRefreshControl: UIRefreshControl {
+private class FakeUIRefreshControl: UIRefreshControl {
     private var _isRefreshing = false
     
     override var isRefreshing: Bool {

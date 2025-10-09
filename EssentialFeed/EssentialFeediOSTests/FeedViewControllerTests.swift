@@ -29,12 +29,8 @@ final class FeedViewControllerTests: XCTestCase {
     func test_loadingFeedIndicator_isVisibleWhileLoadingFeed() {
         let (sut, loader) = makeSUT()
         
-        sut.loadViewIfNeeded()
-        sut.replaceRefreshControlWithFakeForiOS17Support()
-        XCTAssertFalse(sut.isShowingLoadingIndicator)
+        sut.simulateAppearance()
         
-        sut.beginAppearanceTransition(true, animated: false)
-        sut.endAppearanceTransition()
         XCTAssertTrue(sut.isShowingLoadingIndicator, "Expected loading indicator once view is loaded incorporating iOS17 changes with viewIsAppearing")
         
         loader.completeFeedLoading(at: 0)

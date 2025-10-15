@@ -460,7 +460,7 @@ GET /image/{image-id}/comments
 - [X] Load feed automatically when view is presented
 - [X] Allow customer to manually reload feed (pull to refresh)
 - [X] Show a loading indicator while loading feed
-- [ ] Render all loaded feed items (location, image, description)
+- [X] Render all loaded feed items (location, image, description)
 - [ ] Image loading experience
       - [X] Load when image view is visible (on screen)
       - [X] Cancel when image view is out of screen

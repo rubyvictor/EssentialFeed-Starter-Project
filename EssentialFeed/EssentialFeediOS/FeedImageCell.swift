@@ -12,6 +12,7 @@ public final class FeedImageCell: UITableViewCell {
     public let locationLabel = UILabel()
     public let descriptionLabel = UILabel()
     public let feedImageContainer = UIView()
+    public let feedImageView = UIImageView()
 }
 
 public extension FeedImageCell {
@@ -29,5 +30,9 @@ public extension FeedImageCell {
     
     var isShowingImageLoadingIndicator: Bool {
         return feedImageContainer.isShimmering
+    }
+    
+    var renderedImage: Data? {
+        return feedImageView.image?.pngData()
     }
 }

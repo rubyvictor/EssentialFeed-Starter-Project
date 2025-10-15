@@ -18,7 +18,7 @@ public protocol FeedImageDataLoader {
     func loadImageData(from url: URL, completion: @escaping (Result) -> Void) -> FeedImageDataLoaderTask
 }
 
-final public class FeedViewController: UITableViewController {
+final public class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
     private var onViewIsAppearing: ((FeedViewController) -> (Void))?
     private var feedLoader: FeedLoader?
     private var imageLoader: FeedImageDataLoader?
@@ -36,6 +36,7 @@ final public class FeedViewController: UITableViewController {
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(load), for: .valueChanged)
+        tableView.prefetchDataSource = self
         load()
         
         onViewIsAppearing = { vc in
@@ -102,6 +103,13 @@ final public class FeedViewController: UITableViewController {
         tasks[indexPath]?.cancel()
         tasks[indexPath] = nil
     }
+    
+    public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach { indexPath in
+            let cellModel = tableModel[indexPath.row]
+            _ = imageLoader?.loadImageData(from: cellModel.url) { _ in }
+        }
+    }
 }
 
 public extension FeedViewController {
@@ -130,6 +138,12 @@ public extension FeedViewController {
     @discardableResult
     func simulateFeedImageViewVisible(at index: Int) -> FeedImageCell? {
         return feedImageView(at: index) as? FeedImageCell
+    }
+    
+    func simulateFeedImageViewNearVisible(at row: Int) {
+        let ds = tableView.prefetchDataSource
+        let index = IndexPath(row: row, section: feedImagesSection)
+        ds?.tableView(tableView, prefetchRowsAt: [index])
     }
     
     func simulateFeedImageViewNotVisible(at row: Int) {

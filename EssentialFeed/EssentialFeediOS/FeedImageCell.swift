@@ -13,6 +13,7 @@ public final class FeedImageCell: UITableViewCell {
     public let descriptionLabel = UILabel()
     public let feedImageContainer = UIView()
     public let feedImageView = UIImageView()
+    public let feedImageRetryButton = UIButton()
 }
 
 public extension FeedImageCell {
@@ -34,5 +35,9 @@ public extension FeedImageCell {
     
     var renderedImage: Data? {
         return feedImageView.image?.pngData()
+    }
+    
+    var isShowingRetryAction: Bool {
+        return !feedImageRetryButton.isHidden
     }
 }

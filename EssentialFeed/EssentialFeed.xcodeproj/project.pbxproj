@@ -144,6 +144,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Helpers/UIButton+TestHelpers.swift",
+				"Helpers/UIImage+TestHelpers.swift",
 				"Helpers/UIRefreshControl+TestHelpers.swift",
 			);
 			target = B1F028422E93B0FB0090C5F6 /* EssentialFeediOS */;

@@ -34,7 +34,7 @@ final class FeedRefreshViewController: NSObject {
     }
 }
 
-final public class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
+public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
     private var onViewIsAppearing: ((FeedViewController) -> (Void))?
     var refreshController: FeedRefreshViewController?
     private var imageLoader: FeedImageDataLoader?

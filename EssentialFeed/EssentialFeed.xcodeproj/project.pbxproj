@@ -143,6 +143,7 @@
 		B131EEFD2EAA50180007C42F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Helpers/UIButton+TestHelpers.swift",
 				"Helpers/UIRefreshControl+TestHelpers.swift",
 			);
 			target = B1F028422E93B0FB0090C5F6 /* EssentialFeediOS */;
@@ -150,6 +151,7 @@
 		B131EEFE2EAA50180007C42F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Helpers/UIButton+TestHelpers.swift",
 				"Helpers/UIRefreshControl+TestHelpers.swift",
 			);
 			target = B1F0284C2E93B0FC0090C5F6 /* EssentialFeediOSTests */;

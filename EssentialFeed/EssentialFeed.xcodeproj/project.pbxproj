@@ -140,6 +140,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B131EEFD2EAA50180007C42F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Helpers/UIRefreshControl+TestHelpers.swift",
+			);
+			target = B1F028422E93B0FB0090C5F6 /* EssentialFeediOS */;
+		};
+		B131EEFE2EAA50180007C42F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Helpers/UIRefreshControl+TestHelpers.swift",
+			);
+			target = B1F0284C2E93B0FC0090C5F6 /* EssentialFeediOSTests */;
+		};
 		B1C700812E4DD7AC00F2023E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -157,7 +171,7 @@
 		B1C7007E2E4DD18800F2023E /* FeedAPI */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (B1C700812E4DD7AC00F2023E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = FeedAPI; sourceTree = "<group>"; };
 		B1C700AF2E5DA99A00F2023E /* EssentialFeedAPIEndToEndTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeedAPIEndToEndTests; sourceTree = "<group>"; };
 		B1F028442E93B0FB0090C5F6 /* EssentialFeediOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOS; sourceTree = "<group>"; };
-		B1F028512E93B0FC0090C5F6 /* EssentialFeediOSTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOSTests; sourceTree = "<group>"; };
+		B1F028512E93B0FC0090C5F6 /* EssentialFeediOSTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (B131EEFD2EAA50180007C42F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, B131EEFE2EAA50180007C42F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOSTests; sourceTree = "<group>"; };
 		B1FD7C562E827FEA005CE7F4 /* EssentialFeedCacheIntegrationTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeedCacheIntegrationTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 

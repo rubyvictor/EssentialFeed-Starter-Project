@@ -8,7 +8,7 @@
 import UIKit
 import EssentialFeed
 
-final class FeedRefreshViewController: NSObject {
+public final class FeedRefreshViewController: NSObject {
     public lazy var view: UIRefreshControl = {
         let view = UIRefreshControl()
         view.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -36,7 +36,7 @@ final class FeedRefreshViewController: NSObject {
 
 public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
     private var onViewIsAppearing: ((FeedViewController) -> (Void))?
-    var refreshController: FeedRefreshViewController?
+    public var refreshController: FeedRefreshViewController?
     private var imageLoader: FeedImageDataLoader?
     private var tableModel = [FeedImage]() {
         didSet {

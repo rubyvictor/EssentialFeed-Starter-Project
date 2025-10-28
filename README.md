@@ -467,3 +467,58 @@ GET /image/{image-id}/comments
       - [X] Show a loading indicator while loading image (shimmer)
       - [X] Option to retry on image download error
       - [X] Preload when image view is near visible
+
+## Architecture overview
+![](archi_overview.png)
+
+## Visualizing all the MVC responsibilities
+
+- To understand the FeedViewController’s responsibilities we group its interactions with other components in individual MVC groups. You can visualize the segmented MVCs through the following graph:
+
+![](multiple_mvcs.png)
+
+1. Describes how the FeedViewController manages the FeedLoader loading state, updates the UIRefreshControl view and handles UIRefreshControl events via the target-action pattern.
+
+2. Describes how the FeedViewController manages the feed state, which is an [FeedImage], to populate the UITableView via the UITableViewDataSource protocol. Additionally, it also handles delegation and prefetching events for the table view.
+3. Describes how the FeedViewController creates and configures FeedImageCells with the FeedImage data model.
+
+4. Describes how the FeedViewController manages the FeedImageDataLoader loading state for every ongoing image request, and it updates the FeedImageCells accordingly. When the request fails, it updates the cell and handles retry actions.
+
+- Very Massive FeedViewController:
+
+![](massive_Viewcontroller.png)
+
+We therefore create two new controllers to distribute the `FeedViewController` responsibilities:
+
+![](FeedVC_twoNew_VCs.png)
+
+## Separating usage from creation
+- Although we distributed responsibilities, the FeedViewController ended up with new roles: creating the FeedRefreshViewController and the FeedImageCellController.
+
+- The main problem is that, as long as the FeedViewController creates its collaborators, it needs to provide their dependencies.
+
+- Thus, the FeedViewController ends up requiring redundant dependencies, just to pass it forward to its collaborators:
+
+- The FeedRefreshViewController needs the <FeedLoader> dependency
+
+- The FeedImageCellController needs the FeedImage and the <FeedImageDataLoader>.
+- As a result, even though the FeedViewController does not use those components, it still depends on them.
+
+- To achieve low coupling, there must be a clear separation between creating and using instances. Dependency Injection is the solution.
+
+To separate creation and usage between the FeedViewController and the FeedRefreshViewController and FeedImageCellController we create a new component: the FeedUIComposer.
+
+![](feedUIComposer.png)
+
+## The Adapter pattern
+- The Adapter pattern is a structural design pattern that relies on object composition.
+
+- The purpose of an Adapter, also known as Wrapper, is to convert the interface of a component into another interface a client expects. It enables you to decouple components from complex dependencies.
+
+- In other words, the Adapter pattern enables components with incompatible interfaces to work together seamlessly.
+
+- In our case, the FeedRefreshController sends `[FeedImage]` but the FeedViewController expects `[FeedImageCellController]`.
+
+Thus, to maintain a clean separation between the two, we need to transform (or adapt) the communication between them.
+
+![](adapter.png)

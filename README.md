@@ -522,3 +522,22 @@ To separate creation and usage between the FeedViewController and the FeedRefres
 Thus, to maintain a clean separation between the two, we need to transform (or adapt) the communication between them.
 
 ![](adapter.png)
+
+## MVVM with UIKit
+
+### Key takeaways:
+- No automatic binding
+- Bind with closures or frameworks like Combine and RxSwift
+- Controllers as Binders
+- Stateful vs Stateless View Models
+- Presentable value transformations in View Models
+- Use Generics to create reusable components
+
+## Overall Architecture
+
+![](archi_overview_mvvm.png)
+
+- To make both the View and the ViewModel more reusable, the View and the ViewModel should not depend on each other directly.  Make them communicate with a binding.
+- In UIKit, use ViewControllers to act as Binders.  At least one UIViewController is needed in UIKit to present views on the screen.
+
+![](VC_binding.png)

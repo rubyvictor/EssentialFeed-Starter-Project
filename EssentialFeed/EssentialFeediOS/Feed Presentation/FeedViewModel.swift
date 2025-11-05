@@ -4,7 +4,6 @@
 //
 //  Created by Victor Lee on 3/11/25.
 //
-import Foundation
 import EssentialFeed
 
 final class FeedViewModel {

@@ -541,3 +541,97 @@ Thus, to maintain a clean separation between the two, we need to transform (or a
 - In UIKit, use ViewControllers to act as Binders.  At least one UIViewController is needed in UIKit to present views on the screen.
 
 ![](VC_binding.png)
+
+## MVP: Creating a Reusable and Cross-Platform Presentation Layer, Implementing Service Adapters, and Solving Cyclic Dependencies & Memory Management issues with the Proxy Pattern
+
+![](MVP_architecture.png)
+
+### Introduction to MVP
+
+- MVP stands for Model View Presenter, which like MVVM, is a variant of the MVC pattern. MVP is similar to MVC, but instead of a Controller, there is a Presenter.
+
+![](intro_MVP.png)
+
+- Like in the MVC Controller, the MVP Presenter holds a reference to the View. However, the dependency between the Presenter and the View is inverted.
+
+- In MVC, the Controller holds a reference to the Concrete View type as such:
+
+![](mvc.png)
+
+- In MVP, the Presenter holds a reference to an Abstract View type in the form of a protocol.
+
+![](mvp.png)
+
+- An essential aspect of the MVP component relationship is that the View protocol belongs to the Presentation layer (blue coloured rectangle). If the View protocol was in the View layer, that would create a strong dependency between the Presenter and the concrete framework-specific View. In that case, the Presentation layer would not be cross-platform.
+
+- Moreover, in MVC, the View does not reference or know about the Controller. In MVP, the View talks directly with the Presenter creating a two-way communication channel between the View and the Presenter.
+
+![](abstractView.png)
+
+- It’s essential to understand that this two-way communication channel introduces a potential retain cycle. When composing the View with the Presenter, you need to be careful with memory management.
+
+- Like in MVVM, MVP helps us create a cross-platform and reusable Presentation Layer. The Presenter is responsible for transforming/formatting domain values into presentable ViewModels.
+
+- In MVC and MVP, a ViewModel (also called ViewData or PresentableModel) has no behavior. It only holds data. That’s different from MVVM where a ViewModel has dependencies and behavior.
+
+![](presenter.png)
+
+- In MVP, the View protocols and ViewModel act as a Boundary between the Concrete Views and Presenters, leaving the Presentation layer agnostic of specific UI frameworks or platforms:
+
+![](boundary.png)
+
+### Variations of MVP implementations
+
+- MVP with bidirectional communication between the Presenter and View
+	-  The Presenter has a reference to an <AbstractView>, and the concrete View has a reference to the concrete Presenter.  In UIKit, you would need a UIView subclass to hold a reference to the Presenter. (Most common)
+
+![](MVP1.png)
+
+- MVP with UIKit View Controllers
+
+![](MVP_UiKit.png)
+
+- MVP with indirect bidirectional communication
+
+![](MVP_indirect.png)
+
+- MVP with unidirectional communication
+
+![](MVP_unidirectional.png)
+
+- MVP with Adapter conforming to ViewDelegate
+	In this MVP variant, the View delegates messages via a protocol. The Adapter conforms to the ViewDelegate and translates View events to Domain requests/commands.
+
+![](MVP_adapter.png)
+
+### Using the Proxy Pattern to move Memory Management to the Composer
+
+- Move Memory Management to the Composition layer by creating the WeakRefVirtualProxy class.
+
+```
+private final class WeakRefVirtualProxy<T: AnyObject> {
+    private weak var object: T?
+    
+    init(_ object: T) {
+        self.object = object
+    }
+}
+```
+
+- The Virtual Proxy holds a weak reference to the object instance and forwards all received messages to the object reference.
+
+- By using conditional conformance, we can make the Virtual Proxy conform to protocols only when the object type it holds also conform to the protocol. This way, we safely forward the messages to the weak instance reference with compile-time guarantees.
+
+```
+extension WeakRefVirtualProxy: View where T: View {
+    func display(_ viewModel: ViewModel) {
+        object?.display(viewModel) // forwards messages
+    }
+}
+```
+
+- Therefore, instead of making the view property weak in the Presenter, we weakify the View reference in the Composition layer with the WeakRefVirtualProxy.
+
+```
+let weakView = WeakRefVirtualProxy(view) 
+```

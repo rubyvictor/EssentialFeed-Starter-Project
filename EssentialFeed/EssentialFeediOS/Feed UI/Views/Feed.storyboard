@@ -69,6 +69,9 @@ Location</string>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uno-7P-fbK" userLabel="Image Container">
                                                     <rect key="frame" x="0.0" y="46" width="353" height="353"/>
                                                     <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hD1-gi-XnB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="353" height="353"/>
+                                                        </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pa-QK-nIV">
                                                             <rect key="frame" x="0.0" y="0.0" width="353" height="353"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="120"/>
@@ -77,10 +80,10 @@ Location</string>
                                                             <state key="normal" title="⟳">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="retryButtonTapped" destination="rG8-tC-u3C" eventType="touchUpInside" id="F8w-7d-5g7"/>
+                                                            </connections>
                                                         </button>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hD1-gi-XnB">
-                                                            <rect key="frame" x="0.0" y="0.0" width="353" height="353"/>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -121,6 +124,14 @@ Location</string>
                                         <constraint firstAttribute="trailingMargin" secondItem="NPG-T1-cIR" secondAttribute="trailing" id="t2a-LS-oua"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="zZ3-3Q-YYh" id="DzJ-2B-Pgk"/>
+                                    <outlet property="feedImageContainer" destination="Uno-7P-fbK" id="zwF-rb-f5d"/>
+                                    <outlet property="feedImageRetryButton" destination="8pa-QK-nIV" id="8eE-2W-SCe"/>
+                                    <outlet property="feedImageView" destination="hD1-gi-XnB" id="keg-2t-Kjx"/>
+                                    <outlet property="locationContainer" destination="S1a-57-M1V" id="yuG-0h-Yyu"/>
+                                    <outlet property="locationLabel" destination="F4L-sY-3QD" id="MFS-hD-3b6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -143,7 +143,7 @@
 		B131EEFD2EAA50180007C42F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Helpers/UIImage+TestHelpers.swift",
+				"FeedUI/Helpers/UIImage+TestHelpers.swift",
 			);
 			target = B1F028422E93B0FB0090C5F6 /* EssentialFeediOS */;
 		};
